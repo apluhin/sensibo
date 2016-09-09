@@ -4,7 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-
 import java.util.List;
 
 public interface ConditionerWork {
@@ -13,7 +12,7 @@ public interface ConditionerWork {
 
     JsonObject getPod(String id);
 
-    List<JsonArray> getState(String id);
+    JsonArray getState(String id);
 
     JsonElement getMeasurment(String id);
 

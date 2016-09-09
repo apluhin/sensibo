@@ -1,7 +1,6 @@
 package ru.api.sensibo.json.impl;
 
 import com.google.gson.JsonArray;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import ru.api.sensibo.json.ConditionerWork;
@@ -39,11 +38,11 @@ public class ConditionerWorkImpl implements ConditionerWork {
 
     }
 
-    public List<JsonArray> getState(String id) {
-        List<JsonArray> jsonArr = new ArrayList<>();
+    public JsonArray getState(String id) {
+
         try {
             JsonArray pods = query.getState(id);
-            System.out.println(pods);
+            return pods;
         } catch (IOException e) {
             e.printStackTrace();
         }

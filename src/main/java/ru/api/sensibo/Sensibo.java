@@ -1,37 +1,26 @@
 package ru.api.sensibo;
 
 
-
+import ru.api.sensibo.entity.AirConditioner;
 import ru.api.sensibo.handler.HandlerAirCond;
 
-import java.io.*;
+import java.io.IOException;
+import java.util.List;
 
 
 public class Sensibo {
 
-
-
     public static void main(String[] args) throws IOException {
 
-
-
         HandlerAirCond handlerAirCond = new HandlerAirCond();
-        System.out.println(handlerAirCond.getConditioner());
-
-//        String requesttest = "{'on': false}";
-//        JsonObject jsonElements = new JsonParser().parse(requesttest).getAsJsonObject();
-//        JsonObject jsonObject = new JsonObject();
-//        jsonObject.add("acState", jsonElements);
-//        System.out.println(jsonObject);
-//        new Thread(() -> {System.out.println(conditionerWork.getMeasurment(s.get(0)));}).start();
-//        new Thread(() -> {System.out.println(conditionerWork.changeState(jsonObject, s.get(1)));}).start();
+        List<AirConditioner> conditioner = handlerAirCond.getConditioner();
+        System.out.println(handlerAirCond);
 
 
-
-
+//       handlerAirCond.changeState(conditioner.get(0), new State(StateWorking.On, StateMode.Fan, FanLevel.Auto, 35));
+//       handlerAirCond.changeState(conditioner.get(1), new State(StateWorking.On, null, null, null));
 
     }
-
 
 
 }

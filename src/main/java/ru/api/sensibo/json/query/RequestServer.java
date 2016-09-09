@@ -1,7 +1,10 @@
 package ru.api.sensibo.json.query;
 
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -11,8 +14,8 @@ import java.util.Properties;
 
 public class RequestServer {
 
-    private static String SERVER = "https://home.sensibo.com/api/v2/";
     private  static final String KEY;
+    private static String SERVER = "https://home.sensibo.com/api/v2";
 
     static {
         String resourceName = "key.properties"; // could also be a constant
@@ -50,6 +53,7 @@ public class RequestServer {
 
     public JsonArray getState(String id) throws IOException {
         HttpURLConnection httpCon = (HttpURLConnection) buildQuery("/pods/" + id + "/acStates");
+
         JsonObject jsonObject = getJsonObjectFromString(httpCon);
 
         return (JsonArray) jsonObject.get("result");
@@ -119,6 +123,7 @@ public class RequestServer {
 
 
     private JsonObject getJsonObjectFromString(String response) {
+
         JsonElement jelement = new JsonParser().parse(response);
         return jelement.getAsJsonObject();
     }
