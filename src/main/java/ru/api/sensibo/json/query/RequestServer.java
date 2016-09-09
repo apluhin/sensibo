@@ -1,4 +1,4 @@
-package ru.api.sensibo.query;
+package ru.api.sensibo.json.query;
 
 
 import com.google.gson.*;

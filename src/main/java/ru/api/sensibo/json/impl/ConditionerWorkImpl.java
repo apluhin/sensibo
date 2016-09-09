@@ -1,11 +1,11 @@
-package ru.api.sensibo.impl;
+package ru.api.sensibo.json.impl;
 
 import com.google.gson.JsonArray;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import ru.api.sensibo.ConditionerWork;
-import ru.api.sensibo.query.RequestServer;
+import ru.api.sensibo.json.ConditionerWork;
+import ru.api.sensibo.json.query.RequestServer;
 
 import java.io.IOException;
 import java.util.ArrayList;
