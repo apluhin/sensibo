@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ConditionerWorkImpl implements ConditionerWork {
+public class ConditionerWorkJsonImpl implements ConditionerWork {
 
     RequestServer query = new RequestServer();
 

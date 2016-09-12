@@ -20,4 +20,16 @@ public class Measurment {
                 ", humindity=" + humindity +
                 '}';
     }
+
+    public double getSecondAgo() {
+        return secondAgo;
+    }
+
+    public double getCurrentTemperature() {
+        return currentTemperature;
+    }
+
+    public double getHumindity() {
+        return humindity;
+    }
 }
